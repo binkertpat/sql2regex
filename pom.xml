@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>sql2regex</groupId>
 	<artifactId>sql2regex</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1a</version>
 	<name>sql2regex</name>
 	<description>Convert SQL-Statements into RegEx</description>
 	<properties>
@@ -43,8 +43,36 @@
 			<artifactId>sass-maven-plugin</artifactId>
 			<version>3.7.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 	<build>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/node_modules/jquery/dist</directory>
+				<targetPath>static/js/jquery</targetPath>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/node_modules/popper.js/dist</directory>
+				<targetPath>static/js/popperjs</targetPath>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/node_modules/bootstrap/dist/js</directory>
+				<targetPath>static/js/bootstrap</targetPath>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -78,38 +106,16 @@
 							<goal>npm</goal>
 						</goals>
 					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>nl.geodienstencentrum.maven</groupId>
-				<artifactId>sass-maven-plugin</artifactId>
-				<version>3.7.2</version>
-				<executions>
 					<execution>
+						<id>scss-compile</id>
 						<goals>
-							<goal>update-stylesheets</goal>
+							<goal>npm</goal>
 						</goals>
+						<configuration>
+							<arguments>run scss</arguments>
+						</configuration>
 					</execution>
 				</executions>
-				<configuration>
-					<sassOptions>
-						<always_update>true</always_update>
-						<style>:expanded</style>
-						<debug_info>false</debug_info>
-					</sassOptions>
-					<resources>
-						<resource>
-							<source>
-								<directory>${basedir}/src/main/resources/static/styles</directory>
-								<includes>
-									<include>*.scss</include>
-								</includes>
-								<excludes />
-							</source>
-							<destination>${basedir}/src/main/resources/static/styles</destination>
-						</resource>
-					</resources>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
