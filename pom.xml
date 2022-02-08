@@ -38,6 +38,11 @@
 			<artifactId>spring-boot-maven-plugin</artifactId>
 			<version>2.6.3</version>
 		</dependency>
+		<dependency>
+			<groupId>nl.geodienstencentrum.maven</groupId>
+			<artifactId>sass-maven-plugin</artifactId>
+			<version>3.7.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -49,8 +54,8 @@
 					<compilerArgument>
 						-proc:none
 					</compilerArgument>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -73,16 +78,38 @@
 							<goal>npm</goal>
 						</goals>
 					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>nl.geodienstencentrum.maven</groupId>
+				<artifactId>sass-maven-plugin</artifactId>
+				<version>3.7.2</version>
+				<executions>
 					<execution>
-						<id>scss-compile</id>
 						<goals>
-							<goal>npm</goal>
+							<goal>update-stylesheets</goal>
 						</goals>
-						<configuration>
-							<arguments>run build-sass and run watch-sass</arguments>
-						</configuration>
 					</execution>
 				</executions>
+				<configuration>
+					<sassOptions>
+						<always_update>true</always_update>
+						<style>:expanded</style>
+						<debug_info>false</debug_info>
+					</sassOptions>
+					<resources>
+						<resource>
+							<source>
+								<directory>${basedir}/src/main/resources/static/styles</directory>
+								<includes>
+									<include>*.scss</include>
+								</includes>
+								<excludes />
+							</source>
+							<destination>${basedir}/src/main/resources/static/styles</destination>
+						</resource>
+					</resources>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

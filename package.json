@@ -1,9 +1,5 @@
 {
-  "name": "customise-bootstrap-for-spring-boot",
-  "scripts": {
-    "build-sass": "node-sass src/main/scss -o target/classes/static/css",
-    "watch-sass": "node-sass -w src/main/scss -o target/classes/static/css"
-  },
+  "name": "bootstrap",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "copyfiles": "^2.1.0",
