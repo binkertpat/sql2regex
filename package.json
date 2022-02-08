@@ -1,22 +1,13 @@
 {
-  "name": "customise-bootstrap-for-spring-boot",
+  "name": "SassCompileInSpring",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "home.html",
   "scripts": {
     "scss": "node-sass src/main/resources/static/styles -o src/main/resources/static/styles",
     "watch": "node-sass --watch src/main/resources/static/styles -o src/main/resources/static/styles"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/teggr/customise-bootstrap-for-spring-boot.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/teggr/customise-bootstrap-for-spring-boot/issues"
-  },
-  "homepage": "https://github.com/teggr/customise-bootstrap-for-spring-boot#readme",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "copyfiles": "^2.1.0",
