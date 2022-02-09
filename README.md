@@ -30,7 +30,7 @@ compile changes on runtime:
 ## start application
 <code>./mvnw spring-boot:run </code>
 
-## open TODOs
+## open TODOs before project start
 - [ ] source code button navbar
 - [ ] footer
 - [ ] explanation part on website
@@ -39,6 +39,9 @@ compile changes on runtime:
 - [ ] set og meta tags
 - [ ] deploy to heroku apps
 
+## contributers
+Patrick Binkert
+Maximilian Förster
 
 
 
