@@ -12,8 +12,6 @@
 ## npm-dependencies
 - npm-bootstrap: 5.1.0
 - npm-copyfiles: ^2.1.0
-- npm-jquery: ^3.4.1
-- npm-popper.js: ^1.15.0
 - node-version: v12.16.3
 - npm-version: 6.14.4
 
