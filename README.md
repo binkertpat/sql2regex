@@ -10,7 +10,7 @@
 - spring-boot-starter-web
 
 ## npm-dependencies
-- npm-bootstrap: ^4.3.1
+- npm-bootstrap: 5.1.0
 - npm-copyfiles: ^2.1.0
 - npm-jquery: ^3.4.1
 - npm-popper.js: ^1.15.0

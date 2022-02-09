@@ -5,16 +5,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link th:href="@{/styles/site.css}" rel="stylesheet" />
 </head>
-<body>   <p th:text="'Ich bin eine Thymeleaf-View!'" />
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="#">Features</a>
-        <a class="p-2 text-dark" href="#">Enterprise</a>
-        <a class="p-2 text-dark" href="#">Support</a>
-        <a class="p-2 text-dark" href="#">Pricing</a>
-    </nav>
-    <a class="btn btn-outline-primary" href="#">Sign up</a>
-</div>
-</body>
+    <body>
+        <header class="p-3 bg-dark text-white">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <img th:src="@{/img/sql2regex.svg}" width="80" role="img" alt="sql2regex"/>
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="#" class="nav-link px-4 text-white">converter</a></li>
+                        <li><a href="#" class="nav-link px-4 text-white">examples</a></li>
+                        <li><a href="#" class="nav-link px-4 text-white">use cases</a></li>
+                        <li><a href="#" class="nav-link px-4 text-white">about us</a></li>
+                        <li><a href="#" class="nav-link px-4 text-white">privacy policy</a></li>
+                        <li><a href="#" class="nav-link px-4 text-white">contribution</a></li>
+                    </ul>
+
+                    <div class="text-end">
+                        <button type="button" class="btn btn-warning" onclick="javascript:location.href='https://github.com/binkertpat/sql2regex'">sourcecode</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </body>
 </html>
