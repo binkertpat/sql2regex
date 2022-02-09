@@ -40,8 +40,8 @@ compile changes on runtime:
 - [ ] deploy to heroku apps
 
 ## contributers
-Patrick Binkert
-Maximilian Förster
+- Patrick Binkert, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
+- Maximilian Förster, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
 
 
 
