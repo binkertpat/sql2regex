@@ -22,7 +22,7 @@ hard compile:
 compile changes on runtime:
 <code>npm run watch</code>
 
-## first install
+## install/build application
 <code>./mvnw clean install</code>
 
 ## start application
