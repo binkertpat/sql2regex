@@ -36,7 +36,7 @@ compile changes on runtime:
 - [ ] generate favicons
 - [ ] set og meta tags
 - [x] deploy to heroku apps
-- [ ] @Alletkla - Aget account on heroku.com for collaboration 
+- [ ] @Alletkla - get account on heroku.com for collaboration 
 
 ## heroku deploy https://sql2regex.herokuapp.com/
 - heroku create
