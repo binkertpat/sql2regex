@@ -12,8 +12,6 @@
 ## npm-dependencies
 - npm-bootstrap: 5.1.0
 - npm-copyfiles: ^2.1.0
-- npm-jquery: ^3.4.1
-- npm-popper.js: ^1.15.0
 - node-version: v12.16.3
 - npm-version: 6.14.4
 
@@ -30,7 +28,7 @@ compile changes on runtime:
 ## start application
 <code>./mvnw spring-boot:run </code>
 
-## open TODOs
+## open TODOs before project start
 - [ ] source code button navbar
 - [ ] footer
 - [ ] explanation part on website
@@ -39,6 +37,9 @@ compile changes on runtime:
 - [ ] set og meta tags
 - [ ] deploy to heroku apps
 
+## contributers
+- Patrick Binkert, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
+- Maximilian Förster, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
 
 
 
