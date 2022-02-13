@@ -47,6 +47,9 @@ compile changes on runtime:
 <br>
 <code>./mvnw clean heroku:deploy</code>
 
+## project management
+https://kfdw-0399.kissflow.com/view/project/sql2regex
+
 ## contributers
 - Patrick Binkert, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
 - Maximilian Förster, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
