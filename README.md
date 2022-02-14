@@ -1,5 +1,3 @@
-[![Build](https://github.com/binkertpat/sql2regex/actions/workflows/main.yml/badge.svg)](https://github.com/binkertpat/sql2regex/actions/workflows/main.yml)
-
 # sql2regex
 
 ## java-dependencies
