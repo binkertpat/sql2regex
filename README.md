@@ -1,5 +1,8 @@
 [![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/binkertpat/sql2regex)
 [![TWITTER](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/sql2regex)
+[![BUILT WITH](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/binkertpat/sql2regex)
+
+
 [![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)](https://github.com/binkertpat/sql2regex)
 [![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)](https://github.com/binkertpat/sql2regex)
 [![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://github.com/binkertpat/sql2regex)
