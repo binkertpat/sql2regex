@@ -1,8 +1,13 @@
-[![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/binkertpat/sql2regex)
-[![TWITTER](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/sql2regex)
-[![BUILT WITH](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://github.com/binkertpat/sql2regex)
+# github stats
+[![LICENCE](https://img.shields.io/github/license/binkertpat/sql2regex.svg)](https://github.com/binkertpat/sql2regex)
+[![ISSUES](https://img.shields.io/github/issues/binkertpat/sql2regex.svg)](https://github.com/binkertpat/sql2regex)
+[![ISSUES](https://img.shields.io/github/issues-closed/binkertpat/sql2regex.svg)](https://github.com/binkertpat/sql2regex)
+[![PULL REQUESTS](https://img.shields.io/github/issues-pr/binkertpat/sql2regex.svg)](https://github.com/binkertpat/sql2regex)
+[![PULL REQUESTS](https://img.shields.io/github/issues-pr-closed/binkertpat/sql2regex.svg)](https://github.com/binkertpat/sql2regex)
 
-
+# project stats
+[![BUILT WITH](https://github-readme-stats.vercel.app/api/top-langs/?username=binkertpat&theme=blue-green)](https://github.com/binkertpat/sql2regex)
+<br>
 [![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)](https://github.com/binkertpat/sql2regex)
 [![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)](https://github.com/binkertpat/sql2regex)
 [![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://github.com/binkertpat/sql2regex)
@@ -11,17 +16,21 @@
 [![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/binkertpat/sql2regex)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/binkertpat/sql2regex)
 
-# SonarQube
+# sonarqube quality management
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=bugs)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
-<br>
+
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
+
+# socials
+
+[![TWITTER](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/sql2regex)
 
 # sql2regex
 
