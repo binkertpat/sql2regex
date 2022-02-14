@@ -83,19 +83,7 @@ compile changes on runtime:
 <code>./mvnw clean heroku:deploy</code>
 
 ## project management
-<iframe src="https://trello.com/b/yogXJiVa/sql2regex">
-  <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-<foreignObject width="100" height="100">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-        <ul>
-            <li>text</li>
-        </ul>
-        <iframe src=“https://trello.com/b/yogXJiVa/sql2regex“ height=“800″ width=“100%″ name=“TRELLO“>
-</iframe>
-    </div>
-</foreignObject>
-</svg>
-
+https://trello.com/b/yogXJiVa/sql2regex
 
 ## contributers
 - Patrick Binkert, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
