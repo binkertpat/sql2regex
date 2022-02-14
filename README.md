@@ -1,14 +1,13 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=bugs)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
-<br>
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
+<br>
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
-<br>
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 
 # sql2regex
 
