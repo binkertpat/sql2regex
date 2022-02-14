@@ -49,6 +49,7 @@ compile changes on runtime:
 - [ ] generate favicons from logo
 - [ ] set og meta tags
 - [x] deploy to heroku apps
+- [x] add SonarQube
 - [ ] @Alletkla - get account on heroku.com for collaborate by deployment 
 
 ## heroku deploy https://sql2regex.herokuapp.com/
