@@ -90,4 +90,4 @@ https://trello.com/b/yogXJiVa/sql2regex
 - Maximilian Förster, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
 
 
-
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
