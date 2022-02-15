@@ -1,6 +1,9 @@
 name: automaticTOC
 
-on: [push]
+on:
+  push:
+    branches: [main]
+    paths: ['readme.md']
 
 jobs:
   build:
