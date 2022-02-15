@@ -1,3 +1,8 @@
+# table of content
+
+<!--ts-->
+<!--te-->
+
 # github stats
 [![LICENCE](https://img.shields.io/github/license/binkertpat/sql2regex.svg)](https://github.com/binkertpat/sql2regex)
 [![ISSUES](https://img.shields.io/github/issues/binkertpat/sql2regex.svg)](https://github.com/binkertpat/sql2regex)
@@ -33,10 +38,6 @@
 [![TWITTER](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/sql2regex)
 
 # sql2regex
-
-<!--ts-->
-<!--te-->
-
 ## java-dependencies
 - sass-maven-plugin
 - spring-boot-configuration-processor
@@ -76,6 +77,7 @@ compile changes on runtime:
 - [ ] set og meta tags
 - [x] deploy to heroku apps
 - [x] add SonarQube
+- [x] add automatic TOC
 - [ ] @Alletkla - get account on heroku.com for collaborate by deployment 
 
 ## heroku deploy 
