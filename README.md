@@ -77,7 +77,7 @@ compile changes on runtime:
 - [ ] set og meta tags
 - [x] deploy to heroku apps
 - [x] add SonarQube
-- [x] add automatic TOC
+- [x] add automatic TOC 
 - [ ] @Alletkla - get account on heroku.com for collaborate by deployment 
 
 ## heroku deploy 
