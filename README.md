@@ -34,6 +34,9 @@
 
 # sql2regex
 
+<!--ts-->
+<!--te-->
+
 ## java-dependencies
 - sass-maven-plugin
 - spring-boot-configuration-processor
