@@ -35,6 +35,23 @@
 # sql2regex
 
 <!--ts-->
+* [github stats](#github-stats)
+* [project stats](#project-stats)
+* [sonarqube quality management](#sonarqube-quality-management)
+* [socials](#socials)
+* [sql2regex](#sql2regex)
+   * [java-dependencies](#java-dependencies)
+   * [npm-dependencies](#npm-dependencies)
+   * [scss → css](#scss--css)
+   * [install/build application](#installbuild-application)
+   * [start application](#start-application)
+   * [open TODOs before project start](#open-todos-before-project-start)
+   * [heroku deploy](#heroku-deploy)
+   * [project management](#project-management)
+   * [contributers](#contributers)
+
+<!-- Added by: runner, at: Tue Feb 15 15:48:33 UTC 2022 -->
+
 <!--te-->
 
 ## java-dependencies
