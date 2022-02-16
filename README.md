@@ -1,12 +1,12 @@
 # SQL2REGEX - table of content
 
 <!--ts-->
-* [table of content](#table-of-content)
+* [SQL2REGEX - table of content](#sql2regex---table-of-content)
 * [github stats](#github-stats)
 * [project stats](#project-stats)
 * [sonarqube quality management](#sonarqube-quality-management)
 * [socials](#socials)
-* [sql2regex](#sql2regex)
+* [SQL2REGEX - the project](#sql2regex---the-project)
    * [java-dependencies](#java-dependencies)
    * [npm-dependencies](#npm-dependencies)
    * [scss → css](#scss--css)
@@ -17,7 +17,7 @@
    * [project management](#project-management)
    * [contributers](#contributers)
 
-<!-- Added by: runner, at: Tue Feb 15 16:21:57 UTC 2022 -->
+<!-- Added by: runner, at: Wed Feb 16 11:54:42 UTC 2022 -->
 
 <!--te-->
 
