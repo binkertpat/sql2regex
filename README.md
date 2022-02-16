@@ -14,10 +14,9 @@
    * [start application](#start-application)
    * [open TODOs before project start](#open-todos-before-project-start)
    * [heroku deploy](#heroku-deploy)
-   * [project management](#project-management)
    * [contributers](#contributers)
 
-<!-- Added by: runner, at: Wed Feb 16 12:41:14 UTC 2022 -->
+<!-- Added by: runner, at: Wed Feb 16 15:09:17 UTC 2022 -->
 
 <!--te-->
 
