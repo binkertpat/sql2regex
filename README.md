@@ -109,12 +109,6 @@ compile changes on runtime:
 <br>
 <code>./mvnw clean heroku:deploy</code>
 
-## project management
-
-<a href="https://trello.com/b/yogXJiVa/sql2regex"> 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Trello-logo-blue.svg/2000px-Trello-logo-blue.svg.png" height="25">
-</a>
-
 ## contributers
 - Patrick Binkert, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
 - Maximilian Förster, Technische Universität Dresden, Student teacher, 10th semester (physics and computer science)
