@@ -85,18 +85,6 @@ compile changes on runtime:
 ## start application
 <code>./mvnw spring-boot:run </code>
 
-## open TODOs before project start
-- [ ] github source code button on top right navbar
-- [ ] footer
-- [ ] explanation part on website (what, why, how, ...)
-- [ ] create and insert an nice logo
-- [ ] generate favicons from logo
-- [ ] set og meta tags
-- [x] deploy to heroku apps
-- [x] add SonarQube
-- [x] add automatic TOC 
-- [ ] @Alletkla - get account on heroku.com for collaborate by deployment 
-
 ## heroku deploy 
 <a href="https://sql2regex.herokuapp.com/"> 
   <img src="https://cdn.worldvectorlogo.com/logos/heroku-1.svg" height="30">
