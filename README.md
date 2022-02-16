@@ -26,17 +26,6 @@
 [![PULL REQUESTS](https://img.shields.io/github/issues-pr/binkertpat/sql2regex.svg)](https://github.com/binkertpat/sql2regex)
 [![PULL REQUESTS](https://img.shields.io/github/issues-pr-closed/binkertpat/sql2regex.svg)](https://github.com/binkertpat/sql2regex)
 
-# project stats
-[![BUILT WITH](https://github-readme-stats.vercel.app/api/top-langs/?username=binkertpat&theme=blue-green)](https://github.com/binkertpat/sql2regex)
-<br>
-[![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)](https://github.com/binkertpat/sql2regex)
-[![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)](https://github.com/binkertpat/sql2regex)
-[![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://github.com/binkertpat/sql2regex)
-[![JAVA](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://github.com/binkertpat/sql2regex)
-[![SPRING](https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://github.com/binkertpat/sql2regex)
-[![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://github.com/binkertpat/sql2regex)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://github.com/binkertpat/sql2regex)
-
 # sonarqube quality management
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=binkertpat_sql2regex&metric=bugs)](https://sonarcloud.io/summary/new_code?id=binkertpat_sql2regex)
