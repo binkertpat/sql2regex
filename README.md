@@ -12,11 +12,10 @@
    * [scss → css](#scss--css)
    * [install/build application](#installbuild-application)
    * [start application](#start-application)
-   * [open TODOs before project start](#open-todos-before-project-start)
    * [heroku deploy](#heroku-deploy)
    * [contributers](#contributers)
 
-<!-- Added by: runner, at: Wed Feb 16 15:09:17 UTC 2022 -->
+<!-- Added by: runner, at: Wed Feb 16 15:14:17 UTC 2022 -->
 
 <!--te-->
 
