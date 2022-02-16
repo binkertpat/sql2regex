@@ -1,4 +1,4 @@
-# table of content
+# SQL2REGEX - table of content
 
 <!--ts-->
 * [table of content](#table-of-content)
@@ -55,7 +55,7 @@
 
 [![TWITTER](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/sql2regex)
 
-# sql2regex
+# SQL2REGEX - the project
 ## java-dependencies
 - sass-maven-plugin
 - spring-boot-configuration-processor
