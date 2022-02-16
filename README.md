@@ -3,7 +3,6 @@
 <!--ts-->
 * [SQL2REGEX - table of content](#sql2regex---table-of-content)
 * [github stats](#github-stats)
-* [project stats](#project-stats)
 * [sonarqube quality management](#sonarqube-quality-management)
 * [socials](#socials)
 * [SQL2REGEX - the project](#sql2regex---the-project)
@@ -15,7 +14,7 @@
    * [heroku deploy](#heroku-deploy)
    * [contributers](#contributers)
 
-<!-- Added by: runner, at: Wed Feb 16 15:29:44 UTC 2022 -->
+<!-- Added by: runner, at: Wed Feb 16 15:39:44 UTC 2022 -->
 
 <!--te-->
 
