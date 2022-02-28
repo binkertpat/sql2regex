@@ -6,8 +6,6 @@
 * [sonarqube quality management](#sonarqube-quality-management)
 * [socials](#socials)
 * [SQL2REGEX - the project](#sql2regex---the-project)
-   * [java-dependencies](#java-dependencies)
-   * [npm-dependencies](#npm-dependencies)
    * [scss → css](#scss--css)
    * [install/build application](#installbuild-application)
    * [start application](#start-application)
@@ -42,22 +40,6 @@
 [![TWITTER](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/sql2regex)
 
 # SQL2REGEX - the project
-## java-dependencies
-- sass-maven-plugin
-- spring-boot-configuration-processor
-- spring-boot-devtools
-- spring-boot-maven-plugin
-- heroku-maven-plugin
-- maven-dependency-plugin
-- spring-boot-starter-test
-- spring-boot-starter-thymeleaf
-- spring-boot-starter-web
-
-## npm-dependencies
-- npm-bootstrap: 5.1.0
-- npm-copyfiles: 2.1.0
-- node-version: 12.16.3
-- npm-version: 6.14.4
 
 ## scss → css
 hard compile:
