@@ -7,116 +7,230 @@
     <meta name="description" content="Converting tool from sql to regular expressions.">
     <meta name="keywords" content="sql, regex">
     <meta name="robots" content="INDEX,FOLLOW" />
-    <meta http-equiv="content-Language" content="en" />
     <meta name="author" content="Patrick Binkert, Maximilian Förster">
     <meta name="publisher" content="Patrick Binkert, Maximilian Förster"/>
     <meta name="copyright" content="Patrick Binkert, Maximilian Förster"/>
-    <meta name="audience" content="alle" />
+    <meta name="audience" content="alle"/>
     <meta name="page-type" content="converter" />
-    <meta name="page-topic" content="SQL REGEX" />
+    <meta name="page-topic" content="SQL2REGEX" />
     <meta name="revisit-after" content="2 days" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-        </symbol>
-        <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-        </symbol>
-        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-        </symbol>
-    </svg>
+    <meta property="og:title" content="sql2regex">
+    <meta property="og:site_name" content="sql2regex">
+    <meta property="og:url" content="https://sql2regex.herokuapp.com">
+    <meta property="og:description" content="A converter to translate SQL statements into regular expressions. The purpose is to validate variable student results based on a sample solution in digital exam scenarios.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://github.com/binkertpat/sql2regex/blob/5a95bff969fa31758be27b3a0491974b71795c4a/src/main/resources/static/img/favicons/android-chrome-512x512.png">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="application-name" content="sql2regex">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="sql2regex">
+    <meta name="msapplication-TileColor" content="#000">
+    <meta name="theme-color" content="#000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <meta name="msapplication-config" content="browserconfig.xml?v=220228080207">
+    <link rel="apple-touch-icon" sizes="57x57" th:href="@{/img/favicons/apple-touch-icon-57x57.png?v=220228080207}">
+    <link rel="apple-touch-icon" sizes="60x60" th:href="@{/img/favicons/apple-touch-icon-60x60.png?v=220228080207}">
+    <link rel="apple-touch-icon" sizes="72x72" th:href="@{/img/favicons/apple-touch-icon-72x72.png?v=220228080207}">
+    <link rel="apple-touch-icon" sizes="76x76" th:href="@{/img/favicons/apple-touch-icon-76x76.png?v=220228080207}">
+    <link rel="apple-touch-icon" sizes="114x114" th:href="@{/img/favicons/apple-touch-icon-114x114.png?v=220228080207}">
+    <link rel="apple-touch-icon" sizes="120x120" th:href="@{/img/favicons/apple-touch-icon-120x120.png?v=220228080207}">
+    <link rel="apple-touch-icon" sizes="144x144" th:href="@{/img/favicons/apple-touch-icon-144x144.png?v=220228080207}">
+    <link rel="apple-touch-icon" sizes="152x152" th:href="@{/img/favicons/apple-touch-icon-152x152.png?v=220228080207}">
+    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/img/favicons/apple-touch-icon-180x180.png?v=220228080207}">
+    <link rel="icon" type="image/png" th:href="@{/img/favicons/android-chrome-36x36.png?v=220228080207}" sizes="36x36">
+    <link rel="icon" type="image/png" th:href="@{/img/favicons/android-chrome-48x48.png?v=220228080207}" sizes="48x48">
+    <link rel="icon" type="image/png" th:href="@{/img/favicons/android-chrome-72x72.png?v=220228080207}" sizes="72x72">
+    <link rel="icon" type="image/png" th:href="@{/img/favicons/android-chrome-96x96.png?v=220228080207}" sizes="96x96">
+    <link rel="icon" type="image/png" th:href="@{/img/favicons/android-chrome-144x144.png?v=220228080207}" sizes="144x144">
+    <link rel="icon" type="image/png" th:href="@{/img/favicons/android-chrome-192x192.png?v=220228080207}" sizes="192x192">
+    <link rel="icon" type="image/png" th:href="@{/img/favicons/favicon-16x16.png?v=220228080207}" sizes="16x16">
+    <link rel="icon" type="image/png" th:href="@{/img/favicons/favicon-32x32.png?v=220228080207}" sizes="32x32">
+    <link rel="icon" type="image/png" th:href="@{/img/favicons/favicon-96x96.png?v=220228080207}" sizes="96x96">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicons/favicon.ico?v=220228080207}">
+    <meta name="msapplication-TileImage" content="favicons/mstile-150x150.png?v=220228080207">
+    <meta name="msapplication-square70x70logo" content="favicons/mstile-70x70.png?v=220228080207">
+    <meta name="msapplication-square150x150logo" content="favicons/mstile-150x150.png?v=220228080207">
+    <meta name="msapplication-wide310x150logo" content="favicons/mstile-310x150.png?v=220228080207">
+    <meta name="msapplication-square310x310logo" content="favicons/mstile-310x310.png?v=220228080207">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-320x460.png?v=220228080207}" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-640x920.png?v=220228080207}" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-640x1096.png?v=220228080207}" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-748x1024.png?v=220228080207}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape)" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-750x1024.png?v=220228080207}" media="" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-750x1294.png?v=220228080207}" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-768x1004.png?v=220228080207}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait)" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-1182x2208.png?v=220228080207}" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-1242x2148.png?v=220228080207}" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-1496x2048.png?v=220228080207}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" rel="apple-touch-startup-image">
+    <link th:href="@{/img/favicons/apple-touch-startup-image-1536x2008.png?v=220228080207}" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" rel="apple-touch-startup-image">
+    <link rel="manifest" th:href="@{/img/favicons/manifest.json?v=220228080207}" />
 </head>
     <body class="bg-dark">
-    <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <button onclick="topFunction()" class="btn btn-primary btn-lg" type="button" id="scrolltotop" title="gototop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z"/>
+            </svg>
+        </button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+            <div class="container">
+                <a href="/" class="navbar-brand align-items-center">
+                    <img width="60" alt="sgl2regex logo" th:src="@{/img/logo_sql2regex.svg}">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav me-auto">
+                        <a class="nav-item nav-link fw-bolder active" aria-current="page" href="#">converter</a>
+                        <a class="nav-item nav-link fw-bolder" href="#">examples</a>
+                        <a class="nav-item nav-link fw-bolder " href="#">about us</a>
+                        <a class="nav-item nav-link fw-bolder" href="#">contributer</a>
+                    </div>
+                    <div class="navbar-nav">
+                        <button type="button" onclick="location.href='https://github.com/binkertpat/sql2regex';" class="btn btn-info m-1">Sourcecode @GitHub</button>
+                        <button type="button" onclick="location.href='https://tu-dresden.de/ing/informatik/smt/ddi';" class="btn btn-secondary m-1">Didaktik der Informatik @TUD</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
         <div class="container">
-            <a class="navbar-brand" href="#">sql2regex</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">converter</a>
-                    <a class="nav-link" href="#">examples</a>
-                    <a class="nav-link" href="#">about us</a>
-                    <a class="nav-link" href="#">contributer</a>
+            <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
+                <svg class="bi flex-shrink-0 me-2" fill="currentColor" width="24" height="24" role="img" aria-label="Danger:" viewBox="0 0 16 16">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <div>
+                    This Website is still <strong>under construction</strong>!
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <div class="container mt-3">
+            <div class="p-5 mb-4 bg-dark text-light rounded-3 jumbotronbackgroundimage" style="background-image: url('/img/bg.jpg');">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold jumbotronshadow">sql2regex-Converter</h1>
+                    <p class="col-md-8 fs-4 jumbotronshadow">
+                        A converter to translate SQL statements into regular expressions. The purpose is to validate variable student results
+                        based on a sample solution in digital exam scenarios.
+                    </p>
+                    <button class="btn btn-info btn-lg" onclick="location.href='https://github.com/binkertpat/sql2regex';" type="button">GitHub</button>
                 </div>
             </div>
         </div>
-    </nav>
 
-    <div class="container">
-        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
-            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-            <div>
-                This Website is still <strong>under construction</strong>!
-            </div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    </div>
-
-    <div class="container bg-dark">
-        <div class="card">
-            <div class="card-body">
-                <div class="input-group">
-                    <textarea class="form-control"  placeholder="insert sql-statement" aria-label="insert sql-statement" style="height: 200px"></textarea>
-                </div>
-                <h3>set options</h3>
-                <div class="row row-cols-4 pt-2 pb-3">
-                    <div class="col">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="casesensititytoggle" checked>
-                            <label class="form-check-label" for="casesensititytoggle">case sensitivity</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="tablenameordertoggle" checked>
-                            <label class="form-check-label" for="tablenameordertoggle">table name order</label>
-                        </div>
+        <div class="container mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="pb-2 border-bottom">Converter</h1>
+                    <div class="input-group">
+                        <textarea class="form-control" id="sqlinput" placeholder="Insert your SQL-Statement here!" aria-label="insert sql-statement" style="height: 200px"></textarea>
                     </div>
-                    <div class="col">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="joinordertoggle" checked>
-                            <label class="form-check-label" for="joinordertoggle">(inner) join order)</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="misspellingtoggle" checked>
-                            <label class="form-check-label" for="misspellingtoggle">misspelling (1 character)</label>
-                        </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg mb-2 mt-2 display-6" type="button">convert</button>
                     </div>
-                    <div class="col">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="whereconditionordertoggle" checked>
-                            <label class="form-check-label" for="whereconditionordertoggle">where condition order</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="havingconditionordertoggle" checked>
-                            <label class="form-check-label" for="havingconditionordertoggle">having condition order</label>
-                        </div>
+                    <div class="input-group">
+                        <textarea class="form-control" id="regexoutput" placeholder="Copy your generated RegEx here!" aria-label="generated regex" style="height: 200px"></textarea>
                     </div>
-                    <div class="col">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="datatypescreatetabletoggle" checked>
-                            <label class="form-check-label" for="datatypescreatetabletoggle">data type create table</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="open" checked>
-                            <label class="form-check-label" for="open">open</label>
-                        </div>
+                    <div class="text-end">
+                        <button onclick="generateJsonFormatFile('sqlinput','regexoutput', 'jsonFeedback')" id="json_button" class="btn btn-m btn-info copy-button mt-2">save as .json file</button>
+                        <button onclick="copy2clipbord('regexoutput','copyFeedack')" id="copy_button" class="btn btn-m btn-success copy-button mt-2">copy to clipboard</button>
                     </div>
-                </div>
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-lg mb-2 display-6" type="button">convert</button>
-                </div>
-                <div class="input-group">
-                    <textarea class="form-control"  placeholder="generated regex" aria-label="generated regex" style="height: 200px"></textarea>
+                    <div id="copyFeedack" class="alert alert-success mt-3" role="alert">
+                        <strong>Success!</strong> Copied to your cliboard. Enjoy! :-)
+                    </div>
+                    <div id="jsonFeedback" class="alert alert-success mt-3" role="alert">
+                        <strong>Success!</strong> JSON is generated and already downloaded to your Computer. Enjoy! :-)
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+        <div class="container mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container" id="hanging-icons">
+                        <h2 class="pb-2 border-bottom">Questions</h2>
+                        <div class="row g-4 py-3 row-cols-1 row-cols-lg-3">
+                            <div class="col d-flex align-items-start">
+                                <div class="flex-shrink-0 me-3">
+                                    <svg class="bi" width="3em" height="3em" viewBox="0 0 16 16">
+                                        <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+                                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1ZM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V8Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h2>What is SQL?</h2>
+                                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                                    <a href="https://forcedotcom.github.io/phoenix/" class="btn btn-primary">
+                                        SQL-Grammar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <div class="flex-shrink-0 me-3">
+                                    <svg class="bi" width="3em" height="3em" viewBox="0 0 16 16">
+                                        <path d="M1.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C2.25 2 1.49 2.759 1.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6ZM14.886 7.9v.164c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456v-1.3c-1.114 0-1.49-.362-1.49-1.456V4.352C14.51 2.759 13.75 2 12.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6ZM7.5 11.5V9.207l-1.621 1.621-.707-.707L6.792 8.5H4.5v-1h2.293L5.172 5.879l.707-.707L7.5 6.792V4.5h1v2.293l1.621-1.621.707.707L9.208 7.5H11.5v1H9.207l1.621 1.621-.707.707L8.5 9.208V11.5h-1Z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h2>What is RegEx?</h2>
+                                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                                    <a href="https://docs.microsoft.com/de-de/dotnet/standard/base-types/regular-expression-language-quick-reference" class="btn btn-primary">
+                                        RegEx-Documentation
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col d-flex align-items-start">
+                                <div class="flex-shrink-0 me-3">
+                                    <svg class="bi" width="3em" height="3em" viewBox="0 0 16 16">
+                                        <path d="M5.933.87a2.89 2.89 0 0 1 4.134 0l.622.638.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636zM7.002 11a1 1 0 1 0 2 0 1 1 0 0 0-2 0zm1.602-2.027c.04-.534.198-.815.846-1.26.674-.475 1.05-1.09 1.05-1.986 0-1.325-.92-2.227-2.262-2.227-1.02 0-1.792.492-2.1 1.29A1.71 1.71 0 0 0 6 5.48c0 .393.203.64.545.64.272 0 .455-.147.564-.51.158-.592.525-.915 1.074-.915.61 0 1.03.446 1.03 1.084 0 .563-.208.885-.822 1.325-.619.433-.926.914-.926 1.64v.111c0 .428.208.745.585.745.336 0 .504-.24.554-.627z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h2>Why i need this?</h2>
+                                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                                    <a href="https://www.bps-system.de/help/display/ONYX/Regulaere+Ausdruecke" class="btn btn-primary">
+                                        ONYX-Documentation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer class="footer mt-3 py-2 bg-success">
+        <div class="container">
+            <div class="row mb-3" >
+                <div class="col-md-4 text-center m-auto">
+                    <p class="h5"> Made with
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="darkred" class="bi bi-arrow-through-heart-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.854 15.854A.5.5 0 0 1 2 15.5V14H.5a.5.5 0 0 1-.354-.854l1.5-1.5A.5.5 0 0 1 2 11.5h1.793l3.103-3.104a.5.5 0 1 1 .708.708L4.5 12.207V14a.5.5 0 0 1-.146.354l-1.5 1.5ZM16 3.5a.5.5 0 0 1-.854.354L14 2.707l-1.006 1.006c.236.248.44.531.6.845.562 1.096.585 2.517-.213 4.092-.793 1.563-2.395 3.288-5.105 5.08L8 13.912l-.276-.182A23.825 23.825 0 0 1 5.8 12.323L8.31 9.81a1.5 1.5 0 0 0-2.122-2.122L3.657 10.22a8.827 8.827 0 0 1-1.039-1.57c-.798-1.576-.775-2.997-.213-4.093C3.426 2.565 6.18 1.809 8 3.233c1.25-.98 2.944-.928 4.212-.152L13.292 2 12.147.854A.5.5 0 0 1 12.5 0h3a.5.5 0 0 1 .5.5v3Z"/>
+                        </svg>
+                    </p>
+                    <p class="h5"> by
+                        <a href="https://github.com/binkertpat" class="link-light text-decoration-none">Patrick Binkert</a>
+                        und
+                        <a href="https://github.com//alletkla" class="link-light text-decoration-none">Maximilian Förster</a>
+                    </p>
+                </div>
+                <div class="col-md-4 align-items-center">
+                    <img th:src="@{/img/logo_sql2regex.svg}" class="rounded mx-auto d-block mt-2 mb-2" width="30%" alt="Logo">
+                </div>
+                <div class="col-md-4 text-center m-auto">
+                    <a href="#" class="link-light fw-bolder text-decoration-none">impressum</a> <br>
+                    <a href="#" class="link-light fw-bolder text-decoration-none">privacy policy</a>
+                    <br><br>
+                    <p class="link-light text-decoration-none">code licensed MIT <br> currently v0.0.1</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script th:src="@{/js/jquery.slim.min.js}" ></script>
     <script th:src="@{/js/popper.min.js}" ></script>
     <script th:src="@{/js/bootstrap.min.js}" ></script>
-    </body>
+    <script th:src="@{/js/js_utils.js}" ></script>
 </html>
