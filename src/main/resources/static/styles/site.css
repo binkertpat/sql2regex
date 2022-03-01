@@ -1,4 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
+.jumbotronbackgroundimage {
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover; }
+
+.jumbotronshadow {
+  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black; }
+
+#scrolltotop {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 99; }
+
+#copyFeedack, #jsonFeedback {
+  display: none; }
+
+.nondecoration {
+  text-decoration: none; }
+
 /*!
  * Bootstrap v5.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -7803,24 +7824,3 @@ textarea.form-control-lg {
     display: inline-flex !important; }
   .d-print-none {
     display: none !important; } }
-
-.jumbotronbackgroundimage {
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: cover; }
-
-.jumbotronshadow {
-  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black; }
-
-#scrolltotop {
-  display: none;
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  z-index: 99; }
-
-#copyFeedack, #jsonFeedback {
-  display: none; }
-
-.nondecoration {
-  text-decoration: none; }

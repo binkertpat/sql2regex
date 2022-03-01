@@ -1,3 +1,30 @@
+
+.jumbotronbackgroundimage{
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.jumbotronshadow{
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}
+
+#scrolltotop{
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 99;
+}
+
+#copyFeedack, #jsonFeedback{
+    display: none;
+}
+
+.nondecoration{
+    text-decoration:none;
+}
+
 $white: #fff;
 $gray-100: #eceff4;
 $gray-200: #e5e9f0;
@@ -29,29 +56,3 @@ $font-family-sans-serif: 'Source Code Pro', -apple-system, BlinkMacSystemFont, "
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 @import "../../../../../node_modules/bootstrap/scss/bootstrap";
 
-
-.jumbotronbackgroundimage{
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-}
-
-.jumbotronshadow{
-    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
-}
-
-#scrolltotop{
-    display: none;
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 99;
-}
-
-#copyFeedack, #jsonFeedback{
-    display: none;
-}
-
-.nondecoration{
-    text-decoration:none;
-}

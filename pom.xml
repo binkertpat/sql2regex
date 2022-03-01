@@ -14,7 +14,7 @@
 	<name>sql2regex</name>
 	<description>Convert SQL-Statements into RegEx</description>
 	<properties>
-		<java.version>8</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -58,23 +58,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<resources>
-			<resource>
-				<directory>${project.basedir}/src/main/resources</directory>
-			</resource>
-			<resource>
-				<directory>${project.basedir}/node_modules/jquery/dist</directory>
-				<targetPath>static/js/jquery</targetPath>
-			</resource>
-			<resource>
-				<directory>${project.basedir}/node_modules/popper.js/dist</directory>
-				<targetPath>static/js/popperjs</targetPath>
-			</resource>
-			<resource>
-				<directory>${project.basedir}/node_modules/bootstrap/dist/js</directory>
-				<targetPath>static/js/bootstrap</targetPath>
-			</resource>
-		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
