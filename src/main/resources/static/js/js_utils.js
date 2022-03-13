@@ -57,3 +57,28 @@ function generateJsonFormatFile(id_sql, id_regex, id_jsonFeedback){
     var jsonFeedbackAlert = document.getElementById(id_jsonFeedback);
     jsonFeedbackAlert.style.display = "block";  
 }
+
+function setActiveClassToNavBar(parentnode){
+    var parentNode = document.getElementById(parentnode);
+    var children = parentNode.children;
+
+    for (var i = 0; i < children.length; i++) {
+        children[i].classList.remove("active");
+
+        var navbarLink = children[i].getAttribute("href");
+        var currentLink = window.location.href;
+
+        if(currentLink.includes(navbarLink) && navbarLink !== "/"){
+            children[i].classList.add("active");
+        } else if(navbarLink === "/") {
+            children[0].classList.add("active");
+        }
+    }
+}
+
+function checkRegExExample(sql, regex){
+    let text = document.getElementById(sql).value;
+    let pattern = new RegExp(document.getElementById(regex).innerHTML, 'gmi');
+    let result = pattern.test(text);
+    console.log(result);
+}
