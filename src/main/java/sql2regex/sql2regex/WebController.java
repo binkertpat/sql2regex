@@ -26,5 +26,17 @@ public class WebController {
         model.addAttribute("activeAbout", true);
         return "about";
     }
+
+    @GetMapping("/privacy")
+    public String privacy(Model model) {
+        model.addAttribute("title", "sql2regex - privacy");
+        return "privacy";
+    }
+
+    @GetMapping("/impressum")
+    public String impressum(Model model) {
+        model.addAttribute("title", "sql2regex - impressum");
+        return "impressum";
+    }
 }
 

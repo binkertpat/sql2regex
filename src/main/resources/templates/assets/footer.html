@@ -1,4 +1,4 @@
-<footer th:fragment="footer" class="footer mt-3 py-2 bg-success">
+<footer th:fragment="footer" class="footer mt-3 py-2 bg-success" xmlns:th="http://www.thymeleaf.org">
   <div class="container">
     <div class="row mb-3" >
       <div class="col-md-4 text-center m-auto">
@@ -19,8 +19,8 @@
         <img th:src="@{/img/logo_sql2regex.svg}" class="rounded mx-auto d-block mt-2 mb-2" width="30%" alt="Logo">
       </div>
       <div class="col-md-4 text-center m-auto">
-        <a href="#" class="link-light fw-bolder text-decoration-none">impressum</a> <br>
-        <a href="#" class="link-light fw-bolder text-decoration-none">privacy policy</a>
+        <a href="impressum" class="link-light fw-bolder text-decoration-none">impressum</a> <br>
+        <a href="privacy" class="link-light fw-bolder text-decoration-none">privacy policy</a>
         <br><br>
         <p class="link-light text-decoration-none">code licensed MIT <br> currently v0.0.1</p>
       </div>
