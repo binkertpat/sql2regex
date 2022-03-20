@@ -5,6 +5,9 @@ target/*
 target/site/*
 !target/site/jacoco
 
+target/site/jacoco/*
+!target/site/jacoco/jacoco.xml
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
