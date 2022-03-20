@@ -6,13 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RestApiController {
-    @GetMapping("/test")
-    public String test() {
-        return "Teeeeeeeeeeeeest :)";
-    }
-
     @GetMapping("/convert")
-    public String ReturnGivenParam(@RequestParam(value = "param", defaultValue = "SQL-Statement") String param) {
+    public String ReturnGivenParam(@RequestParam(value = "sql", defaultValue = "Pass your SQL-Statement!") String param) {
         return param;
     }
 }
