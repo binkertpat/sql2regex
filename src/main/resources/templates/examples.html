@@ -7,7 +7,6 @@
         <button lang="en" th:replace="assets/scrolltotop :: scrolltotop"></button>
         <nav lang="en" th:replace="assets/navbar :: navbar"></nav>
         <div lang="en" th:replace="assets/userwarning :: userwarning"></div>
-
         <div class="container mt-3">
             <div class="card">
                 <div class="card-body">
@@ -33,7 +32,7 @@
                             </h2>
                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                 <div class="accordion-body" >
-                                    <code id="RegEx#1">(?:SELECT|SELEC|SELET|SELCT|SEECT|SLECT|ELECT)\s.*\s(?:FROM|FOM|FRM|FRO|ROM)\s.*table</code>
+                                    <code id="RegEx#1">^(?:SELECT|SELEC|SELET|SELCT|SEECT|SLECT|ELECT)\s.*\s(?:FROM|FOM|FRM|FRO|ROM).*\stable$</code>
                                     <br/> <br/>
                                     <strong>Flags:</strong> <code>/gmi</code> (global, multi line, insensitive)
                                 </div>
@@ -47,17 +46,39 @@
                             </h2>
                             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                                 <div class="accordion-body">
-                                    <label for="testSQL#1" class="form-label">Insert your alternative SQL-Statement:</label>
-                                    <br>
-                                    <input type="text" id="TestSQL#1" class="form-control"/>
-
-                                    <button type="submit" class="btn btn-primary mt-3" onclick="checkRegExExample('TestSQL#1','RegEx#1')">Check against RegEx</button>
-
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <label for="testSQL#1" class="form-label">Check against your alternative SQL-Statement:</label>
+                                                <br>
+                                                <input type="text" id="TestSQL#1" class="form-control"/>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="RadioExampleTestSQL#1" class="form-label">Select preset:</label>
+                                                <br>
+                                                <select class="form-select" id="RadioExampleTestSQL#1" onchange="onChangePresetSelect('TestSQL#1', 'RadioExampleTestSQL#1')">
+                                                    <option value="" selected>none preset selected</option>
+                                                    <option value="SELECT *  FROM  table">SELECT *  FROM  table</option>
+                                                    <option value="SELECT *  Frm  table">SELECT *  Frm  table</option>
+                                                    <option value="SelcT * FROM  table">SelcT * FROM  table</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div id="RegEx#1pos" class="alert alert-success mt-3 examplesfeedback" role="alert">
                                         <strong>Perfect!</strong> This SQL-Statement match with the RegEx!
                                     </div>
+
                                     <div id="RegEx#1neg" class="alert alert-danger mt-3 examplesfeedback" role="alert">
                                         <strong>Oooooops!</strong> This SQL-Statement don't match with the RegEx!
+                                    </div>
+
+                                    <div id="RegEx#1hint" class="alert alert-light mt-3 examplesfeedback" role="alert">
+                                        <strong>Oooooops!</strong> Insert your SQL-Statement or select a preset!
+                                    </div>
+
+                                    <div class="d-grid gap-2 col-6 mx-auto mt-3">
+                                        <button type="submit" class="btn btn-primary" onclick="checkRegExExample('TestSQL#1','RegEx#1')">Check against RegEx</button>
                                     </div>
                                 </div>
                             </div>

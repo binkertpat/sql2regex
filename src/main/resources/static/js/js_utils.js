@@ -60,17 +60,30 @@ function generateJsonFormatFile(id_sql, id_regex, id_jsonFeedback){
 
 function checkRegExExample(sql, regex){
     let text = document.getElementById(sql).value;
+    let nullInputHint = document.getElementById(regex+"hint");
     let pattern = new RegExp(document.getElementById(regex).innerHTML, 'gmi');
-
     let checkPositive = document.getElementById(regex+"pos");
     let checkNegative = document.getElementById(regex+"neg");
 
     checkPositive.style.display = "none";
     checkNegative.style.display = "none";
 
+    if (text.length === 0) {
+         nullInputHint.style.display = "block";
+         return;
+    } else {
+        nullInputHint.style.display = "none";
+    }
+
     if(pattern.test(text)){
         checkPositive.style.display = "block";
     } else{
         checkNegative.style.display = "block";
     }
+}
+
+function onChangePresetSelect(textinputfieldid, selectfieldid){
+    let textinputfield = document.getElementById(textinputfieldid);
+    let selectfield = document.getElementById(selectfieldid).options;
+    textinputfield.value = selectfield[selectfield.selectedIndex].value;
 }

@@ -25,25 +25,28 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="pb-2 border-bottom">Converter</h1>
-                    <div class="input-group">
-                        <textarea class="form-control" id="sqlinput" placeholder="Insert your SQL-Statement here!" aria-label="insert sql-statement" style="height: 200px"></textarea>
-                    </div>
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary btn-lg mb-2 mt-2 display-6" type="button">convert</button>
-                    </div>
-                    <div class="input-group">
-                        <textarea class="form-control" id="regexoutput" placeholder="Copy your generated RegEx here!" aria-label="generated regex" style="height: 200px"></textarea>
-                    </div>
-                    <div class="text-end">
-                        <button onclick="generateJsonFormatFile('sqlinput','regexoutput', 'jsonFeedback')" id="json_button" class="btn btn-m btn-info copy-button mt-2">save as .json file</button>
-                        <button onclick="copy2clipbord('regexoutput','copyFeedack')" id="copy_button" class="btn btn-m btn-success copy-button mt-2">copy to clipboard</button>
-                    </div>
-                    <div id="copyFeedack" class="alert alert-success mt-3" role="alert">
-                        <strong>Success!</strong> Copied to your cliboard. Enjoy! :-)
-                    </div>
-                    <div id="jsonFeedback" class="alert alert-success mt-3" role="alert">
-                        <strong>Success!</strong> JSON is generated and already downloaded to your Computer. Enjoy! :-)
-                    </div>
+                    <form action="#" th:action="@{/}" method="post" th:object="${sqlregex}">
+                        <div class="input-group">
+                            <textarea class="form-control" th:field="*{sql}" id="sqlinput" placeholder="Insert your SQL-Statement here!" aria-label="insert sql-statement" style="height: 200px"></textarea>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg mb-2 mt-2 display-6">convert</button>
+                        </div>
+                        <div class="input-group">
+                            <textarea class="form-control" th:field="*{regex}" id="regexoutput" placeholder="Copy your generated RegEx here!" aria-label="generated regex" style="height: 200px"></textarea>
+                        </div>
+                    </form>
+                        <div class="text-end">
+                            <button onclick="generateJsonFormatFile('sqlinput','regexoutput', 'jsonFeedback')" id="json_button" class="btn btn-m btn-info copy-button mt-2">save as .json file</button>
+                            <button onclick="copy2clipbord('regexoutput','copyFeedack')" id="copy_button" class="btn btn-m btn-success copy-button mt-2">copy to clipboard</button>
+                        </div>
+                        <div id="copyFeedack" class="alert alert-success mt-3" role="alert">
+                            <strong>Success!</strong> Copied to your cliboard. Enjoy! :-)
+                        </div>
+                        <div id="jsonFeedback" class="alert alert-success mt-3" role="alert">
+                            <strong>Success!</strong> JSON is generated and already downloaded to your Computer. Enjoy! :-)
+                        </div>
+
                 </div>
             </div>
         </div>
