@@ -25,15 +25,15 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="pb-2 border-bottom">Converter</h1>
-                    <form action="#" th:action="@{/}" method="post" th:object="${sqlregex}">
+                    <form action="" th:action="@{/}" method="post" th:object="${sqlregex}">
                         <div class="input-group">
                             <textarea class="form-control" th:field="*{sql}" id="sqlinput" placeholder="Insert your SQL-Statement here!" aria-label="insert sql-statement" style="height: 200px"></textarea>
                         </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary btn-lg mb-2 mt-2 display-6">convert</button>
+                            <button type="submit" id="onSubmitConvertForm" class="btn btn-primary btn-lg mb-2 mt-2 display-6">convert</button>
                         </div>
                         <div class="input-group">
-                            <textarea class="form-control" th:field="*{regex}" id="regexoutput" placeholder="Copy your generated RegEx here!" aria-label="generated regex" style="height: 200px"></textarea>
+                            <textarea class="form-control" readonly onload="console.log('test');" th:field="*{regex}" id="regexoutput" placeholder="Copy your generated RegEx here!" aria-label="generated regex" style="height: 200px"></textarea>
                         </div>
                     </form>
                         <div class="text-end">
@@ -106,5 +106,5 @@
         </div>
     </body>
     <footer lang="en" th:replace="assets/footer :: footer"></footer>
-    <scriptcollection lang="en" th:replace="assets/jsscripts :: jsscripts">> </scriptcollection>
+    <scriptcollection lang="en" th:replace="assets/jsscripts :: jsscripts"> </scriptcollection>
 </html>

@@ -1582,7 +1582,7 @@ progress {
     color: #4c566a;
     opacity: 1; }
   .form-control:disabled, .form-control[readonly] {
-    background-color: #e5e9f0;
+    background-color: #FFFFFF;
     opacity: 1; }
   .form-control::file-selector-button {
     padding: 0.375rem 0.75rem;
