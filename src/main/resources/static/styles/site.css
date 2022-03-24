@@ -7,6 +7,9 @@
 .jumbotronshadow {
   text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black; }
 
+.btn-tert {
+  background-color: #f8dec2 !important; }
+
 #scrolltotop {
   display: none;
   position: fixed;

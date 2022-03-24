@@ -9,6 +9,11 @@
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
+.btn-tert{
+    background-color: #f8dec2 !important;
+}
+
+
 #scrolltotop{
     display: none;
     position: fixed;
@@ -56,6 +61,7 @@ $accordion-button-active-color: #000000;
 $accordion-button-bg: #eceff4;
 
 $input-disabled-bg: #FFFFFF;
+
 
 $secondary: $gray-400;
 

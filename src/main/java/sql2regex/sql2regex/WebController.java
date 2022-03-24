@@ -22,15 +22,6 @@ public class WebController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("title", "sql2regex");
-        model.addAttribute("activeConverter", true);
-        model.addAttribute("sqlregex", this.getSqlRegex());
-        return "home";
-    }
-
-    @PostMapping("/")
-    public String enterSqlStartConverting(@ModelAttribute("sqlregex") SqlRegex sqlregex) {
-        sqlregex.setRegex("test Regex, converting coming soon");
-        System.out.println(sqlregex.getSql() + " " + sqlregex.getRegex());
         return "home";
     }
 
