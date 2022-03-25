@@ -23,10 +23,13 @@ function copy2clipbord(id, idFeedback) {
     copyText.select();
     copyText.setSelectionRange(0, 99999); /* for mobile devices */
 
-    navigator.clipboard.writeText(copyText.value);
-
-    let copyFeedbackAlert = document.getElementById(idFeedback);
-    copyFeedbackAlert.style.display = "block";
+    navigator.clipboard.writeText(copyText.value).then(function() {
+        let copyFeedbackAlert = document.getElementById(idFeedback);
+        copyFeedbackAlert.style.display = "block";
+    }, function() {
+        let copyFeedbackAlertFailed = document.getElementById(idFeedback+"Failed");
+        copyFeedbackAlertFailed.style.display = "block";
+    });
 }
 
 function formattedCurrentTimestamp() {
@@ -42,13 +45,19 @@ function generateJsonFormatFile(id_sql, id_regex, id_jsonFeedback) {
     let jsonformat = '{"sql":"' + sql + '", "regex":"' + regex + '", "website":"sql2regex.herokuapp.com", "timestamp":"' + formattedCurrentTimestamp() + '"}'
     let filename = "sql2regex_" + formattedCurrentTimestamp().replaceAll(" @ ", "").replaceAll("/", "").replaceAll(":", "") + ".json";
 
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonformat));
-    element.setAttribute('download', filename);
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-
+    try{
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonformat));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    } catch (e) {
+        console.log(e);
+        let jsonFeedbackAlert = document.getElementById(id_jsonFeedback+"Failed");
+        jsonFeedbackAlert.style.display = "block";
+        return;
+    }
     let jsonFeedbackAlert = document.getElementById(id_jsonFeedback);
     jsonFeedbackAlert.style.display = "block";
 }
@@ -135,52 +144,23 @@ class SqlRegExHistory {
     }
 
     showConvertingHistory() {
-        let container = document.getElementById("convertbodycontainer")
-        container.style.display = "block";
+        document.getElementById("convertbodycontainer").style.display = "block";
+        document.getElementById("jsonFeedbackHistory").style.display = "none";
+        document.getElementById("jsonFeedbackHistoryFailed").style.display = "none";
+        document.getElementById("clearLocalStorage").style.display = "none";
 
         let arrayOfSqlAndArrayOfRegex = this.readSqlRegExFromLocalStorage();
-        let body = document.getElementById("convertbody");
+        let body = document.getElementById("table-container");
 
         while (body.firstChild) {
             body.removeChild(body.lastChild);
         }
-
-        let outerDivAlert = document.createElement('div');
-        outerDivAlert.classList.add('alert', 'alert-info', 'alert-dismissible', 'fade', 'show', 'd-flex', 'align-items-center', 'mt-3');
-        outerDivAlert.setAttribute("role", "alert");
-
-        let svgEl = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
-        svgEl.classList.add('bi', 'flex-shrink-0', 'me-2');
-        svgEl.setAttribute("fill", "currentColor");
-        svgEl.setAttribute("width", "24");
-        svgEl.setAttribute("height", "24");
-        svgEl.setAttribute("role", "img");
-        svgEl.setAttribute("aria-label", "Danger: ");
-        svgEl.setAttribute("viewBox", "0 0 16 16");
-
-        let path = document.createElementNS("http://www.w3.org/2000/svg", 'path');
-        path.setAttribute("d", "M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z");
-
-        let innerDIV = document.createElement('div');
-        innerDIV.innerHTML = "Your datas are only stored in your <strong>local browser storage</strong>!";
-
-        let closeButton = document.createElement('button');
-        closeButton.classList.add('btn-close');
-        closeButton.setAttribute("type", "button");
-        closeButton.setAttribute("data-bs-dismiss", "alert");
-        closeButton.setAttribute("aria-label", "Close");
-
-        svgEl.appendChild(path)
-        outerDivAlert.appendChild(svgEl);
-        outerDivAlert.appendChild(innerDIV);
-        outerDivAlert.appendChild(closeButton);
 
         let table = document.createElement('table');
         table.classList.add("table");
         table.classList.add("table-hover");
         let thead = document.createElement('thead');
         let tbody = document.createElement('tbody');
-
         let row1 = document.createElement('tr');
         let heading1 = document.createElement('th');
         heading1.setAttribute("width", "6%");
@@ -214,71 +194,57 @@ class SqlRegExHistory {
 
         table.appendChild(thead);
         table.appendChild(tbody);
-
-        let tableHeading = document.createElement('h2');
-        tableHeading.innerHTML = "Converting-History";
-        tableHeading.classList.add("pb-2");
-        tableHeading.classList.add("border-bottom");
-
-        let exportButtonContainer = document.createElement('div');
-        exportButtonContainer.classList.add("text-end");
-
-        let clearButton = document.createElement('button');
-        clearButton.innerHTML = "clear local storage";
-        clearButton.classList.add("btn", "btn-m", "btn-tert", "copy-button", "mt-2");
-        clearButton.setAttribute("onclick", "SqlRegExHis.clearLocalStorage()")
-        exportButtonContainer.appendChild(clearButton);
-
-        let exportButton = document.createElement('button');
-        exportButton.innerHTML = "export as .json file";
-        exportButton.classList.add("btn", "btn-m", "btn-success", "copy-button", "mt-2", "ms-2");
-        exportButton.setAttribute("onclick", "SqlRegExHis.downloadJsonOfHistory()")
-        exportButtonContainer.appendChild(exportButton);
-
-        body.appendChild(tableHeading);
-        body.appendChild(outerDivAlert);
         body.appendChild(table);
-        body.appendChild(exportButtonContainer);
     }
 
-    clearLocalStorage() {
-        this.sql = [];
-        this.regex = [];
-        this.writeToLocalStorage(this);
-        this.showConvertingHistory();
-    }
-
-    downloadJsonOfHistory() {
-        let converts = {}
-        let ConvertingHistory = {}
-
-        for (var i = 0; i < this.readSqlRegExFromLocalStorage()[0].length; i++) {
-            let SingleConvert = {};
-            SingleConvert["sql"] = this.readSqlRegExFromLocalStorage()[0][i];
-            SingleConvert["regex"] = this.readSqlRegExFromLocalStorage()[1][i];
-            converts[i] = SingleConvert;
+    clearLocalStorage(clearStorageFeedbackId) {
+        try{
+            this.sql = [];
+            this.regex = [];
+            this.writeToLocalStorage(this);
+        } catch (e) {
+            console.log(e);
+            document.getElementById(clearStorageFeedbackId).style.display = "block";
         }
-        ConvertingHistory["results"] = converts;
-        ConvertingHistory["website"] = "sql2regex.herokuapp.com";
-        ConvertingHistory["timestamp"] = formattedCurrentTimestamp();
+        document.getElementById("convertbodycontainer").style.display = "none";
 
-        let filename = "sql2regex_convertinghistory_" + formattedCurrentTimestamp().replaceAll(" @ ", "").replaceAll("/", "").replaceAll(":", "") + ".json";
-        let element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(ConvertingHistory)));
-        element.setAttribute('download', filename);
-        element.style.display = 'none';
-        document.body.appendChild(element);
-        element.click();
-        document.body.removeChild(element);
+    }
+
+    downloadJsonOfHistory(JsonHistoryFeedbackId) {
+        try{
+            let converts = {}
+            let ConvertingHistory = {}
+
+            for (var i = 0; i < this.readSqlRegExFromLocalStorage()[0].length; i++) {
+                let SingleConvert = {};
+                SingleConvert["sql"] = this.readSqlRegExFromLocalStorage()[0][i];
+                SingleConvert["regex"] = this.readSqlRegExFromLocalStorage()[1][i];
+                converts[i] = SingleConvert;
+            }
+            ConvertingHistory["results"] = converts;
+            ConvertingHistory["website"] = "sql2regex.herokuapp.com";
+            ConvertingHistory["timestamp"] = formattedCurrentTimestamp();
+
+            let filename = "sql2regex_convertinghistory_" + formattedCurrentTimestamp().replaceAll(" @ ", "").replaceAll("/", "").replaceAll(":", "") + ".json";
+            let element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(ConvertingHistory)));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+            document.getElementById(JsonHistoryFeedbackId).style.display = "block";
+        } catch (e) {
+            console.log(e);
+            document.getElementById(JsonHistoryFeedbackId+"Failed").style.display = "block";
+        }
+
     }
 }
 
-let SqlRegExHis = new SqlRegExHistory("SqlRegExHistory");
-SqlRegExHis.checkUpdatedConverting();
-
 async function handleSubmitForm(inputId, outputId) {
     let input = document.getElementById(inputId).value;
-    let domain = window.location.href + "convertTest";
+    let domain = window.location.href + "convert";
 
     if (input.length !== 0) {
         const response = await fetch(domain, {
@@ -290,9 +256,11 @@ async function handleSubmitForm(inputId, outputId) {
         response.json().then(data => {
             let output = document.getElementById(outputId);
             output.value = data.regex;
-            console.log(data.regex);
             SqlRegExHis.checkUpdatedConverting();
         });
     }
     return false;
 }
+
+let SqlRegExHis = new SqlRegExHistory("SqlRegExHistory");
+SqlRegExHis.checkUpdatedConverting();

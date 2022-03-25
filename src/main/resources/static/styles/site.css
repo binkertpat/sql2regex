@@ -10,6 +10,9 @@
 .btn-tert {
   background-color: #f8dec2 !important; }
 
+.inputHeight {
+  height: 200px; }
+
 #scrolltotop {
   display: none;
   position: fixed;
@@ -17,7 +20,7 @@
   right: 15px;
   z-index: 99; }
 
-#copyFeedack, #jsonFeedback {
+#copyFeedack, #copyFeedackFailed, #jsonFeedback, #jsonFeedbackFailed, #jsonFeedbackHistory, #jsonFeedbackHistoryFailed {
   display: none; }
 
 .examplesfeedback {

@@ -13,6 +13,9 @@
     background-color: #f8dec2 !important;
 }
 
+.inputHeight{
+    height: 200px;
+}
 
 #scrolltotop{
     display: none;
@@ -22,7 +25,7 @@
     z-index: 99;
 }
 
-#copyFeedack, #jsonFeedback{
+#copyFeedack, #copyFeedackFailed, #jsonFeedback, #jsonFeedbackFailed, #jsonFeedbackHistory, #jsonFeedbackHistoryFailed{
     display: none;
 }
 

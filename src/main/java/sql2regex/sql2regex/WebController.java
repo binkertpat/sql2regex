@@ -9,15 +9,6 @@ import sql2regex.sql2regex.sql.SqlRegex;
 
 @Controller
 public class WebController {
-    private SqlRegex sqlregex = new SqlRegex();
-
-    public void setSqlRegex(SqlRegex sqlregex) {
-        this.sqlregex = sqlregex;
-    }
-
-    public SqlRegex getSqlRegex() {
-        return sqlregex;
-    }
 
     @GetMapping("/")
     public String home(Model model) {
