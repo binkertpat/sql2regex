@@ -54,8 +54,8 @@ function generateJsonFormatFile(id_sql, id_regex, id_jsonFeedback) {
         document.body.removeChild(element);
     } catch (e) {
         console.log(e);
-        let jsonFeedbackAlert = document.getElementById(id_jsonFeedback+"Failed");
-        jsonFeedbackAlert.style.display = "block";
+        let jsonFeedbackAlertFailed = document.getElementById(id_jsonFeedback+"Failed");
+        jsonFeedbackAlertFailed.style.display = "block";
         return;
     }
     let jsonFeedbackAlert = document.getElementById(id_jsonFeedback);
