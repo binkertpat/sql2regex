@@ -1,6 +1,6 @@
-var scrolltotopbutton = document.getElementById("scrolltotop");
+let scrolltotopbutton = document.getElementById("scrolltotop");
 
-window.onscroll = function() {
+window.onscroll = function () {
     scrollFunction()
 };
 
@@ -18,34 +18,29 @@ function topFunction() {
 }
 
 function copy2clipbord(id, idFeedback) {
-        var copyText = document.getElementById(id);
+    let copyText = document.getElementById(id);
 
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /* for mobile devices */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* for mobile devices */
 
-        navigator.clipboard.writeText(copyText.value);
+    navigator.clipboard.writeText(copyText.value);
 
-        var copyFeedbackAlert = document.getElementById(idFeedback);
-        copyFeedbackAlert.style.display = "block";  
+    let copyFeedbackAlert = document.getElementById(idFeedback);
+    copyFeedbackAlert.style.display = "block";
 }
 
-function formattedCurrentTimestamp(){
-    var currentdate = new Date();
-    return  ((currentdate.getDate().toString().length == 1) ? "0".concat(currentdate.getDate()) : (currentdate.getDate())) + "/"
-            + (((currentdate.getMonth()+1).toString().length == 1) ? "0".concat(currentdate.getMonth()+1) : (currentdate.getMonth()+1)) + "/"
-            + ((currentdate.getFullYear().toString().length == 1) ? "0".concat(currentdate.getFullYear()) : (currentdate.getFullYear())) + " @ "
-            + ((currentdate.getHours().toString().length == 1) ? "0".concat(currentdate.getHours()) : (currentdate.getHours())) + ":"
-            + ((currentdate.getMinutes().toString().length == 1) ? "0".concat(currentdate.getMinutes()) : (currentdate.getMinutes())) + ":"
-            + ((currentdate.getSeconds().toString().length == 1) ? "0".concat(currentdate.getSeconds()) : (currentdate.getSeconds()));
+function formattedCurrentTimestamp() {
+    let currentdate = new Date();
+    return ((currentdate.getDate().toString().length === 1) ? "0".concat(currentdate.getDate()) : (currentdate.getDate())) + "/" + (((currentdate.getMonth() + 1).toString().length === 1) ? "0".concat(currentdate.getMonth() + 1) : (currentdate.getMonth() + 1)) + "/" + ((currentdate.getFullYear().toString().length === 1) ? "0".concat(currentdate.getFullYear()) : (currentdate.getFullYear())) + " @ " + ((currentdate.getHours().toString().length === 1) ? "0".concat(currentdate.getHours()) : (currentdate.getHours())) + ":" + ((currentdate.getMinutes().toString().length === 1) ? "0".concat(currentdate.getMinutes()) : (currentdate.getMinutes())) + ":" + ((currentdate.getSeconds().toString().length === 1) ? "0".concat(currentdate.getSeconds()) : (currentdate.getSeconds()));
 }
 
-function generateJsonFormatFile(id_sql, id_regex, id_jsonFeedback){
-    var element = document.createElement('a');
-    var sql = document.getElementById(id_sql).value;
-    var regex = document.getElementById(id_regex).value;
+function generateJsonFormatFile(id_sql, id_regex, id_jsonFeedback) {
+    let element = document.createElement('a');
+    let sql = document.getElementById(id_sql).value;
+    let regex = document.getElementById(id_regex).value;
 
-    var jsonformat = '{"sql":"' + sql + '", "regex":"' + regex +'", "website":"sql2regex.herokuapp.com", "timestamp":"' + formattedCurrentTimestamp() + '"}'
-    var filename = "sql2regex_" + formattedCurrentTimestamp().replaceAll(" @ ", "").replaceAll("/", "").replaceAll(":", "") + ".json";
+    let jsonformat = '{"sql":"' + sql + '", "regex":"' + regex + '", "website":"sql2regex.herokuapp.com", "timestamp":"' + formattedCurrentTimestamp() + '"}'
+    let filename = "sql2regex_" + formattedCurrentTimestamp().replaceAll(" @ ", "").replaceAll("/", "").replaceAll(":", "") + ".json";
 
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonformat));
     element.setAttribute('download', filename);
@@ -54,100 +49,100 @@ function generateJsonFormatFile(id_sql, id_regex, id_jsonFeedback){
     element.click();
     document.body.removeChild(element);
 
-    var jsonFeedbackAlert = document.getElementById(id_jsonFeedback);
-    jsonFeedbackAlert.style.display = "block";  
+    let jsonFeedbackAlert = document.getElementById(id_jsonFeedback);
+    jsonFeedbackAlert.style.display = "block";
 }
 
-function checkRegExExample(sql, regex){
+function checkRegExExample(sql, regex) {
     let text = document.getElementById(sql).value;
-    let nullInputHint = document.getElementById(regex+"hint");
+    let nullInputHint = document.getElementById(regex + "hint");
     let pattern = new RegExp(document.getElementById(regex).innerHTML, 'gmi');
-    let checkPositive = document.getElementById(regex+"pos");
-    let checkNegative = document.getElementById(regex+"neg");
+    let checkPositive = document.getElementById(regex + "pos");
+    let checkNegative = document.getElementById(regex + "neg");
 
     checkPositive.style.display = "none";
     checkNegative.style.display = "none";
 
     if (text.length === 0) {
-         nullInputHint.style.display = "block";
-         return;
+        nullInputHint.style.display = "block";
+        return;
     } else {
         nullInputHint.style.display = "none";
     }
 
-    if(pattern.test(text)){
+    if (pattern.test(text)) {
         checkPositive.style.display = "block";
-    } else{
+    } else {
         checkNegative.style.display = "block";
     }
 }
 
-function onChangePresetSelect(textinputfieldid, selectfieldid){
+function onChangePresetSelect(textinputfieldid, selectfieldid) {
     let textinputfield = document.getElementById(textinputfieldid);
     let selectfield = document.getElementById(selectfieldid).options;
     textinputfield.value = selectfield[selectfield.selectedIndex].value;
 }
 
 class SqlRegExHistory {
-  constructor(localStorageId) {
-    let ls = localStorage.getItem(localStorageId);
-    this.localStorageId = localStorageId;
-    if(ls != null){
-        this.sql = JSON.parse(ls)[0];
-        this.regex = JSON.parse(ls)[1];
-    } else {
-        this.sql = new Array();
-        this.regex = new Array();
-        this.writeToLocalStorage(this);
+    constructor(localStorageId) {
+        let ls = localStorage.getItem(localStorageId);
+        this.localStorageId = localStorageId;
+        if (ls != null) {
+            this.sql = JSON.parse(ls)[0];
+            this.regex = JSON.parse(ls)[1];
+        } else {
+            this.sql = [];
+            this.regex = [];
+            this.writeToLocalStorage(this);
+        }
     }
-  }
 
-  writeToLocalStorage(data){
-    let toWrittenArrayOfArray = [this.sql, this.regex];
-    localStorage.setItem(this.localStorageId, JSON.stringify(toWrittenArrayOfArray));
-  }
+    writeToLocalStorage() {
+        let toWrittenArrayOfArray = [this.sql, this.regex];
+        localStorage.setItem(this.localStorageId, JSON.stringify(toWrittenArrayOfArray));
+    }
 
-  readSqlFromLocalStorage(){
-    if(localStorage.getItem(this.localStorageId) != null) {
-        let ls = localStorage.getItem(this.localStorageId);
-        return JSON.parse(ls)[0];
-    } else return -1;
-  }
+    readSqlFromLocalStorage() {
+        if (localStorage.getItem(this.localStorageId) != null) {
+            let ls = localStorage.getItem(this.localStorageId);
+            return JSON.parse(ls)[0];
+        } else return -1;
+    }
 
-  readRegExFromLocalStorage(){
-    if(localStorage.getItem(this.localStorageId) != null) {
-      let ls = localStorage.getItem(this.localStorageId);
-      return JSON.parse(ls)[1];
-    } else return -1;
-  }
+    readRegExFromLocalStorage() {
+        if (localStorage.getItem(this.localStorageId) != null) {
+            let ls = localStorage.getItem(this.localStorageId);
+            return JSON.parse(ls)[1];
+        } else return -1;
+    }
 
-  readSqlRegExFromLocalStorage(){
-      return [this.readSqlFromLocalStorage(), this.readRegExFromLocalStorage()]
-  }
+    readSqlRegExFromLocalStorage() {
+        return [this.readSqlFromLocalStorage(), this.readRegExFromLocalStorage()]
+    }
 
-  addToLocalStorage(sqlNew, regexNew){
-      this.sql.push(sqlNew)
-      this.regex.push(regexNew)
-      this.writeToLocalStorage()
-  }
+    addToLocalStorage(sqlNew, regexNew) {
+        this.sql.push(sqlNew)
+        this.regex.push(regexNew)
+        this.writeToLocalStorage()
+    }
 
-  checkUpdatedConverting(){
-    document.getElementById("convertbodycontainer").style.display = "none";
-    let sqlinput = document.getElementById("sqlinput").value;
-    let regexinput = document.getElementById("regexoutput").value;
-    if(!this.sql.includes(sqlinput) && sqlinput.length != 0) this.addToLocalStorage(sqlinput, regexinput);
-    if(this.sql.length != 0) this.showConvertingHistory();
-  }
+    checkUpdatedConverting() {
+        document.getElementById("convertbodycontainer").style.display = "none";
+        let sqlinput = document.getElementById("sqlinput").value;
+        let regexinput = document.getElementById("regexoutput").value;
+        if (!this.sql.includes(sqlinput) && sqlinput.length !== 0) this.addToLocalStorage(sqlinput, regexinput);
+        if (this.sql.length !== 0) this.showConvertingHistory();
+    }
 
-  showConvertingHistory(){
-       let container = document.getElementById("convertbodycontainer")
-       container.style.display = "block";
+    showConvertingHistory() {
+        let container = document.getElementById("convertbodycontainer")
+        container.style.display = "block";
 
-       let arrayOfSqlAndArrayOfRegex = this.readSqlRegExFromLocalStorage();
-       let body = document.getElementById("convertbody");
+        let arrayOfSqlAndArrayOfRegex = this.readSqlRegExFromLocalStorage();
+        let body = document.getElementById("convertbody");
 
         while (body.firstChild) {
-           body.removeChild(body.lastChild);
+            body.removeChild(body.lastChild);
         }
 
         let outerDivAlert = document.createElement('div');
@@ -201,11 +196,8 @@ class SqlRegExHistory {
         row1.appendChild(heading3);
         thead.appendChild(row1);
 
-        if(arrayOfSqlAndArrayOfRegex[0] != -1){
-            for(var i = 0; i<this.sql.length; i++){
-                console.log(arrayOfSqlAndArrayOfRegex[0][i]);
-                console.log(arrayOfSqlAndArrayOfRegex[1][i]);
-
+        if (arrayOfSqlAndArrayOfRegex[0] !== -1) {
+            for (var i = 0; i < this.sql.length; i++) {
                 let row_data = document.createElement('tr');
                 let row_data_1 = document.createElement('td');
                 row_data_1.innerHTML = i;
@@ -213,7 +205,6 @@ class SqlRegExHistory {
                 row_data_2.innerHTML = arrayOfSqlAndArrayOfRegex[0][i];
                 let row_data_3 = document.createElement('td');
                 row_data_3.innerHTML = arrayOfSqlAndArrayOfRegex[1][i];
-
                 row_data.appendChild(row_data_1);
                 row_data.appendChild(row_data_2);
                 row_data.appendChild(row_data_3);
@@ -229,19 +220,18 @@ class SqlRegExHistory {
         tableHeading.classList.add("pb-2");
         tableHeading.classList.add("border-bottom");
 
-
         let exportButtonContainer = document.createElement('div');
         exportButtonContainer.classList.add("text-end");
 
         let clearButton = document.createElement('button');
         clearButton.innerHTML = "clear local storage";
-        clearButton.classList.add("btn","btn-m","btn-tert","copy-button", "mt-2");
+        clearButton.classList.add("btn", "btn-m", "btn-tert", "copy-button", "mt-2");
         clearButton.setAttribute("onclick", "SqlRegExHis.clearLocalStorage()")
         exportButtonContainer.appendChild(clearButton);
 
         let exportButton = document.createElement('button');
         exportButton.innerHTML = "export as .json file";
-        exportButton.classList.add("btn","btn-m","btn-success","copy-button", "mt-2", "ms-2");
+        exportButton.classList.add("btn", "btn-m", "btn-success", "copy-button", "mt-2", "ms-2");
         exportButton.setAttribute("onclick", "SqlRegExHis.downloadJsonOfHistory()")
         exportButtonContainer.appendChild(exportButton);
 
@@ -249,20 +239,20 @@ class SqlRegExHistory {
         body.appendChild(outerDivAlert);
         body.appendChild(table);
         body.appendChild(exportButtonContainer);
-  }
+    }
 
-  clearLocalStorage(){
-      this.sql = new Array();
-      this.regex = new Array();
-      this.writeToLocalStorage(this);
-      this.showConvertingHistory();
-  }
+    clearLocalStorage() {
+        this.sql = [];
+        this.regex = [];
+        this.writeToLocalStorage(this);
+        this.showConvertingHistory();
+    }
 
-  downloadJsonOfHistory(){
+    downloadJsonOfHistory() {
         let converts = {}
         let ConvertingHistory = {}
 
-        for(var i = 0; i<this.readSqlRegExFromLocalStorage()[0].length; i++){
+        for (var i = 0; i < this.readSqlRegExFromLocalStorage()[0].length; i++) {
             let SingleConvert = {};
             SingleConvert["sql"] = this.readSqlRegExFromLocalStorage()[0][i];
             SingleConvert["regex"] = this.readSqlRegExFromLocalStorage()[1][i];
@@ -270,7 +260,7 @@ class SqlRegExHistory {
         }
         ConvertingHistory["results"] = converts;
         ConvertingHistory["website"] = "sql2regex.herokuapp.com";
-        ConvertingHistory["timestamp"] =  formattedCurrentTimestamp();
+        ConvertingHistory["timestamp"] = formattedCurrentTimestamp();
 
         let filename = "sql2regex_convertinghistory_" + formattedCurrentTimestamp().replaceAll(" @ ", "").replaceAll("/", "").replaceAll(":", "") + ".json";
         let element = document.createElement('a');
@@ -280,23 +270,21 @@ class SqlRegExHistory {
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
-  }
+    }
 }
 
 let SqlRegExHis = new SqlRegExHistory("SqlRegExHistory");
 SqlRegExHis.checkUpdatedConverting();
 
-async function handleSubmitForm(inputId, outputId){
+async function handleSubmitForm(inputId, outputId) {
     let input = document.getElementById(inputId).value;
+    let domain = window.location.href + "convertTest";
 
-    if(input.length != 0){
-        const response = await fetch("http://localhost:8080/convertTest", {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body: input,
+    if (input.length !== 0) {
+        const response = await fetch(domain, {
+            method: 'POST', headers: {
+                'Accept': 'application/json', 'Content-Type': 'application/json'
+            }, body: input,
         });
 
         response.json().then(data => {

@@ -22,6 +22,7 @@ public class WebController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("title", "sql2regex");
+        model.addAttribute("activeConverter", true);
         return "home";
     }
 
