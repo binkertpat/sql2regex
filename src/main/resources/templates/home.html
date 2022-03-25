@@ -25,14 +25,16 @@
             <div class="card">
                 <div class="card-body">
                     <h1 class="pb-2 border-bottom">Converter</h1>
-                    <div class="input-group">
-                        <textarea class="form-control inputHeight" id="sqlinput" placeholder="Insert your SQL-Statement here!"></textarea>
+                    <div class="mb-3">
+                        <label for="sqlinput" class="form-label"><strong>SQL-Input</strong></label>
+                        <textarea class="form-control inputHeight" id="sqlinput" rows="3" placeholder="Insert your SQL-Statement here!"></textarea>
                     </div>
                     <div class="d-grid gap-2">
                         <button onclick="handleSubmitForm('sqlinput', 'regexoutput')" id="onSubmitConvertForm" class="btn btn-primary btn-lg mb-2 mt-2 display-6">convert</button>
                     </div>
-                    <div class="input-group">
-                        <textarea class="form-control inputHeight" readonly="readonly" id="regexoutput" placeholder="Copy your generated RegEx here!"></textarea>
+                    <div class="mb-3">
+                        <label for="regexoutput" class="form-label"><strong>RegEx-Output</strong></label>
+                        <textarea class="form-control inputHeight" readonly="readonly" id="regexoutput" rows="3" placeholder="Copy your generated RegEx here!"></textarea>
                     </div>
                     <div class="text-end">
                         <button onclick="generateJsonFormatFile('sqlinput','regexoutput', 'jsonFeedback')" id="json_button" class="btn btn-m btn-tert copy-button mt-2">
