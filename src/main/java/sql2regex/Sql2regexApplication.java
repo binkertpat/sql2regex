@@ -20,7 +20,7 @@ public class Sql2regexApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-		logger.setLevel(Level.ALL);
+		logger.setLevel(Level.FINEST);
 		return args -> {
 
 			logger.info("Let's inspect the beans provided by Spring Boot:");
