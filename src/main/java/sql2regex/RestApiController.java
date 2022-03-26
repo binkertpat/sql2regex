@@ -1,12 +1,13 @@
-package sql2regex.sql2regex;
+package sql2regex;
 
 import org.springframework.web.bind.annotation.*;
-import sql2regex.sql2regex.sql.SqlRegex;
+import sql2regex.converter.SqlRegex;
+
 
 @RestController
 public class RestApiController {
 
-    private final SqlRegex sqlregex = new SqlRegex();
+    private final sql2regex.converter.SqlRegex sqlregex = new SqlRegex();
 
     public SqlRegex getSqlRegex() {
         return sqlregex;

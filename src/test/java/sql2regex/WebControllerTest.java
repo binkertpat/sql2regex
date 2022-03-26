@@ -1,4 +1,4 @@
-package sql2regex.sql2regex;
+package sql2regex;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,37 +16,37 @@ class WebControllerTest {
     MockMvc mvc;
 
     @Test
-    public void testExampleSite() throws Exception {
+    void testExampleSite() throws Exception {
         mvc.perform(get("/examples").contentType(MediaType.TEXT_HTML)).andExpect(status().isOk());
     }
 
     @Test
-    public void testAboutSite() throws Exception {
+    void testAboutSite() throws Exception {
         mvc.perform(get("/about").contentType(MediaType.TEXT_HTML)).andExpect(status().isOk());
     }
 
     @Test
-    public void testStartSite() throws Exception {
+    void testStartSite() throws Exception {
         mvc.perform(get("/").contentType(MediaType.TEXT_HTML)).andExpect(status().isOk());
     }
 
     @Test
-    public void testImpressumSite() throws Exception {
+    void testImpressumSite() throws Exception {
         mvc.perform(get("/impressum").contentType(MediaType.TEXT_HTML)).andExpect(status().isOk());
     }
 
     @Test
-    public void testPrivacySite() throws Exception {
+    void testPrivacySite() throws Exception {
         mvc.perform(get("/privacy").contentType(MediaType.TEXT_HTML)).andExpect(status().isOk());
     }
 
     @Test
-    public void testRobotsSite() throws Exception {
+    void testRobotsSite() throws Exception {
         mvc.perform(get("/robots.txt").contentType(MediaType.TEXT_HTML)).andExpect(status().isOk());
     }
 
     @Test
-    public void testSitemapSite() throws Exception {
+    void testSitemapSite() throws Exception {
         mvc.perform(get("/sitemap.xml").contentType(MediaType.TEXT_XML)).andExpect(status().isOk());
     }
 

@@ -1,25 +1,25 @@
-package sql2regex.sql2regex;
+package sql2regex;
 
 import org.junit.jupiter.api.Test;
-import sql2regex.sql2regex.sql.SqlRegex;
+import sql2regex.converter.SqlRegex;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SqlRegexTest {
+class SqlRegexTest {
     @Test
-    public void setStatementNotNull(){
+    void setStatementNotNull(){
         SqlRegex sqlregex = new SqlRegex("SELECT * FROM table");
         assertThat(sqlregex.getSql()).isEqualTo("SELECT * FROM table");
     }
 
     @Test
-    public void setStatement(){
+    void setStatement(){
         SqlRegex sqlregex = new SqlRegex();
-        assertThat(sqlregex.getSql()).isEqualTo("");
+        assertThat(sqlregex.getSql()).isEmpty();
     }
 
     @Test
-    public void setStatementNoneSetRegex(){
+    void setStatementNoneSetRegex(){
         SqlRegex sqlregex = new SqlRegex();
-        assertThat(sqlregex.getRegex()).isEqualTo("");
+        assertThat(sqlregex.getRegex()).isEmpty();
     }
 }

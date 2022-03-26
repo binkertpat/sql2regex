@@ -1,4 +1,4 @@
-package sql2regex.sql2regex;
+package sql2regex;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

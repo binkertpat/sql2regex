@@ -1,4 +1,4 @@
-package sql2regex.sql2regex.sql;
+package sql2regex.converter;
 
 public class SqlRegex {
     private String sql = "";

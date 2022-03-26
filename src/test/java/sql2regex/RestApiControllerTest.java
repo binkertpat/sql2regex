@@ -1,4 +1,4 @@
-package sql2regex.sql2regex;
+package sql2regex;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

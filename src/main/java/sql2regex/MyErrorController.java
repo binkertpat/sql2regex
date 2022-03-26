@@ -1,4 +1,4 @@
-package sql2regex.sql2regex;
+package sql2regex;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
