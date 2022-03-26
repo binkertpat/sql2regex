@@ -18,6 +18,9 @@
 		<sonar.coverage.jacoco.xmlReportPaths>
 			${project.basedir}/target/site/jacoco/jacoco.xml
 		</sonar.coverage.jacoco.xmlReportPaths>
+		<sonar.sources>
+			src
+		</sonar.sources>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -67,7 +70,7 @@
 		<dependency>
 			<groupId>org.sonarsource.scanner.maven</groupId>
 			<artifactId>sonar-maven-plugin</artifactId>
-			<version>3.9.1.2184</version>
+			<version>3.7.0.1746</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jacoco</groupId>
