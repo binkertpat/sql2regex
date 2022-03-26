@@ -18,7 +18,7 @@ class RestApiControllerTest {
     MockMvc mvc;
 
     @Test
-    public void shouldReturnDefaultMessage() throws Exception {
+    void shouldReturnDefaultMessage() throws Exception {
         this.mvc.perform(get("/convert")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Pass your SQL-Statement!")));
     }

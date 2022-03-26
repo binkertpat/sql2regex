@@ -1,5 +1,8 @@
 package sql2regex.converter;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class SqlRegex {
     private String sql = "";
     private String regex = "";
@@ -35,7 +38,9 @@ public class SqlRegex {
             //TODO: some converting stuff here
             this.setRegex("test - converting coming soon");
         } catch(Exception e){
-            e.printStackTrace();
+            Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+            logger.setLevel(Level.FINEST);
+            logger.warning(e.toString());
         }
     }
 
