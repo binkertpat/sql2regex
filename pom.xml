@@ -18,18 +18,6 @@
 		<sonar.coverage.jacoco.xmlReportPaths>
 			${project.basedir}/target/site/jacoco/jacoco.xml
 		</sonar.coverage.jacoco.xmlReportPaths>
-		<sonar.junit.reportsPath>
-			target/surefire-reports/TEST-*.xml
-		</sonar.junit.reportsPath>
-		<sonar.tests>
-			sonar.tests=src/test/java
-		</sonar.tests>
-		<sonar.sources>
-			src/main
-		</sonar.sources>
-		<sonar.java.binaries>
-			target/classes
-		</sonar.java.binaries>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -175,11 +163,11 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.sonarsource.scanner.maven</groupId>
-				<artifactId>sonar-maven-plugin</artifactId>
-				<version>3.4.0.905</version>
-			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.sonarsource.scanner.maven</groupId>-->
+<!--				<artifactId>sonar-maven-plugin</artifactId>-->
+<!--				<version>3.4.0.905</version>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
 </project>
