@@ -18,9 +18,18 @@
 		<sonar.coverage.jacoco.xmlReportPaths>
 			${project.basedir}/target/site/jacoco/jacoco.xml
 		</sonar.coverage.jacoco.xmlReportPaths>
+		<sonar.junit.reportsPath>
+			target/surefire-reports/TEST-*.xml
+		</sonar.junit.reportsPath>
+		<sonar.tests>
+			sonar.tests=src/test/java
+		</sonar.tests>
 		<sonar.sources>
-			src
+			src/main
 		</sonar.sources>
+		<sonar.java.binaries>
+			target/classes
+		</sonar.java.binaries>
 	</properties>
 	<dependencies>
 		<dependency>
