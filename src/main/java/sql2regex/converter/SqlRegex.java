@@ -1,5 +1,7 @@
 package sql2regex.converter;
 
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,13 +36,16 @@ public class SqlRegex {
     }
 
     public void convert(){
+        Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+        logger.setLevel(Level.ALL);
+        Handler handler = new ConsoleHandler();
+        handler.setLevel(Level.ALL);
+        logger.addHandler(handler);
         try{
             //TODO: some converting stuff here
             this.setRegex("test - converting coming soon");
         } catch(Exception e){
-            Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-            logger.setLevel(Level.FINEST);
-            logger.warning(e.toString());
+            logger.severe(e.toString());
         }
     }
 

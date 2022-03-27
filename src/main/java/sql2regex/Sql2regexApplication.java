@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,10 +22,13 @@ public class Sql2regexApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-		logger.setLevel(Level.FINEST);
-		return args -> {
+		logger.setLevel(Level.ALL);
+		Handler handler = new ConsoleHandler();
+		handler.setLevel(Level.ALL);
+		logger.addHandler(handler);
 
-			logger.info("Let's inspect the beans provided by Spring Boot:");
+		return args -> {
+			logger.config("Let's inspect the beans provided by Spring Boot:");
 			String[] beanNames = ctx.getBeanDefinitionNames();
 			Arrays.sort(beanNames);
 			for (String beanName : beanNames) {

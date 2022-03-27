@@ -1,13 +1,11 @@
 name: Sonar-Cloud-Runner
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
